@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Preben.ai – Your Global AI Advisor</title>
+  <title>Preben.ai — Your Global AI Advisor</title>
   <style>
     body {
       margin: 0;
@@ -20,7 +20,8 @@
       margin-bottom: 2rem;
     }
     header img {
-      width: 60px;
+      width: 80px;
+      border-radius: 12px;
       margin-bottom: 10px;
     }
     h1 {
@@ -32,7 +33,7 @@
       color: #ccc;
       margin-top: 0.5rem;
     }
-    .chat-area {
+    .chat-area, .section {
       background: #1c1c3c;
       padding: 20px;
       border-radius: 12px;
@@ -52,13 +53,13 @@
       display: flex;
       gap: 1rem;
     }
-    .input-group input {
+    .input-group input, .newsletter input {
       flex-grow: 1;
       padding: 10px;
       border-radius: 6px;
       border: none;
     }
-    .input-group button {
+    .input-group button, .newsletter button {
       padding: 10px 20px;
       border-radius: 6px;
       border: none;
@@ -66,9 +67,6 @@
       color: #0a0a23;
       font-weight: bold;
       cursor: pointer;
-    }
-    .prompts {
-      margin-top: 1rem;
     }
     .prompts button {
       margin: 0.3rem;
@@ -79,51 +77,31 @@
       border-radius: 20px;
       cursor: pointer;
     }
-    .section {
-      max-width: 800px;
-      width: 100%;
-      background: #1c1c3c;
-      padding: 20px;
-      margin-bottom: 2rem;
-      border-radius: 12px;
-    }
-    .section h2 {
-      color: #00e0ff;
-    }
-    textarea, input[type="file"] {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: none;
-      margin-top: 0.5rem;
-    }
     footer {
       font-size: 0.9rem;
       color: #888;
       margin-top: 2rem;
       text-align: center;
     }
-    .animate-fade-in {
-      animation: fadeIn 0.8s ease-in;
-    }
-    .animate-slide-up {
-      animation: slideUp 0.5s ease-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideUp {
-      from { transform: translateY(100%); }
-      to { transform: translateY(0); }
+    .sticky {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      color: #000;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3);
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="preben_logo.png" alt="Logo">
-    <h1>Hi, I’m Preben.ai</h1>
-    <p>Your intelligent global advisor for innovation, AI strategy, and scaling.</p>
+    <img src="preben_logo.png" alt="Preben Logo">
+    <h1>Hi, I’m Preben</h1>
+    <p>I live for ideas that move people and technology that changes the world. From scaling ventures to exploring the frontier of AI, I believe in clarity, curiosity, and daring greatly.</p>
+    <p>Born on the island of Askøy near Bergen, shaped in Oslo, and now based in Stockholm — I blend Nordic roots with a global mindset.</p>
   </header>
 
   <div class="chat-area">
@@ -147,6 +125,15 @@
     <input type="file" />
   </div>
 
+  <div class="section newsletter">
+    <h2>Subscribe to Strategy Signals</h2>
+    <p>Smart insights from Preben.ai — delivered directly to your inbox.</p>
+    <form action="https://magic.beehiiv.com/v1/3b9fce2a-c497-4111-b5c2-a6da29c95d7a" method="POST" target="_blank">
+      <input type="email" name="email" placeholder="Enter your email..." required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
   <div class="section">
     <h2>Recent Insights</h2>
     <p><strong>Blog:</strong> How to position your startup for cross-border growth.</p>
@@ -155,68 +142,11 @@
 
   <div class="section">
     <h2>Analytics Snapshot (Coming Soon)</h2>
-    <p>Page visits, top interactions, and user engagement powered by Google Analytics or Fathom.</p>
+    <p>Page visits, top interactions, and user engagement will soon be powered by Google Analytics or Fathom.</p>
   </div>
 
   <footer>
     &copy; 2025 Preben Andreassen | Powered by GPT-4 | andreassen.ai
   </footer>
-
-  <!-- Newsletter Signup Form - Just Before Footer -->
-  <section class="bg-gray-100 py-12">
-    <div class="max-w-3xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4">Stay in the loop 🧠</h2>
-      <p class="mb-6 text-gray-700">Get smart ideas and updates from Preben.ai — directly in your inbox.</p>
-      <form 
-        action="https://magic.beehiiv.com/v1/3b9fce2a-c497-4111-b5c2-a6da29c95d7a" 
-        method="POST"
-        target="_blank"
-        class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in"
-      >
-        <input 
-          type="email" 
-          name="email" 
-          placeholder="Your email address"
-          required
-          class="w-full sm:w-auto px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-        />
-        <button
-          type="submit"
-          class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-all"
-          onclick="window.location.href='/thank-you.html'"
-        >
-          Subscribe ✨
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Sticky Footer Version -->
-  <div 
-    class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-3 px-4 shadow-md flex flex-col sm:flex-row items-center justify-between gap-3 z-50 animate-slide-up"
-  >
-    <span class="text-sm text-gray-800 font-medium">Join Preben.ai for insights and early updates</span>
-    <form 
-      action="https://magic.beehiiv.com/v1/3b9fce2a-c497-4111-b5c2-a6da29c95d7a" 
-      method="POST"
-      target="_blank"
-      class="flex flex-col sm:flex-row items-center gap-2"
-    >
-      <input 
-        type="email" 
-        name="email" 
-        placeholder="Enter your email"
-        required
-        class="px-3 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-      />
-      <button
-        type="submit"
-        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-md"
-        onclick="window.location.href='/thank-you.html'"
-      >
-        Subscribe
-      </button>
-    </form>
-  </div>
 </body>
 </html>
