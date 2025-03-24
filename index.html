@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Preben.ai – Your Global AI Advisor</title>
   <style>
     body {
@@ -91,15 +90,12 @@
     .section h2 {
       color: #00e0ff;
     }
-    textarea, input[type="file"], input[type="email"] {
+    textarea, input[type="file"] {
       width: 100%;
       padding: 10px;
       border-radius: 6px;
       border: none;
       margin-top: 0.5rem;
-    }
-    .newsletter input {
-      margin-top: 1rem;
     }
     footer {
       font-size: 0.9rem;
@@ -107,10 +103,23 @@
       margin-top: 2rem;
       text-align: center;
     }
+    .animate-fade-in {
+      animation: fadeIn 0.8s ease-in;
+    }
+    .animate-slide-up {
+      animation: slideUp 0.5s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
-
   <header>
     <img src="preben_logo.png" alt="Logo">
     <h1>Hi, I’m Preben.ai</h1>
@@ -138,13 +147,6 @@
     <input type="file" />
   </div>
 
-  <div class="section newsletter">
-    <h2>Subscribe to Strategy Signals</h2>
-    <p>Monthly insights from Preben.ai on innovation, venture, and transformation.</p>
-    <input type="email" placeholder="Enter your email..." />
-    <button>Subscribe</button>
-  </div>
-
   <div class="section">
     <h2>Recent Insights</h2>
     <p><strong>Blog:</strong> How to position your startup for cross-border growth.</p>
@@ -159,19 +161,62 @@
   <footer>
     &copy; 2025 Preben Andreassen | Powered by GPT-4 | andreassen.ai
   </footer>
-<!-- Newsletter Signup Form - Just Before Footer -->
-<section class="bg-gray-100 py-12">
-  ...
-</section>
 
-<!-- Sticky Footer Version -->
-<div class="fixed bottom-0 ...">
-  ...
-</div>
+  <!-- Newsletter Signup Form - Just Before Footer -->
+  <section class="bg-gray-100 py-12">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Stay in the loop 🧠</h2>
+      <p class="mb-6 text-gray-700">Get smart ideas and updates from Preben.ai — directly in your inbox.</p>
+      <form 
+        action="https://magic.beehiiv.com/v1/3b9fce2a-c497-4111-b5c2-a6da29c95d7a" 
+        method="POST"
+        target="_blank"
+        class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in"
+      >
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Your email address"
+          required
+          class="w-full sm:w-auto px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        />
+        <button
+          type="submit"
+          class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-all"
+          onclick="window.location.href='/thank-you.html'"
+        >
+          Subscribe ✨
+        </button>
+      </form>
+    </div>
+  </section>
 
-<!-- Add this to your CSS or Tailwind config -->
-<style>
-  ...
-</style>
+  <!-- Sticky Footer Version -->
+  <div 
+    class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-3 px-4 shadow-md flex flex-col sm:flex-row items-center justify-between gap-3 z-50 animate-slide-up"
+  >
+    <span class="text-sm text-gray-800 font-medium">Join Preben.ai for insights and early updates</span>
+    <form 
+      action="https://magic.beehiiv.com/v1/3b9fce2a-c497-4111-b5c2-a6da29c95d7a" 
+      method="POST"
+      target="_blank"
+      class="flex flex-col sm:flex-row items-center gap-2"
+    >
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="Enter your email"
+        required
+        class="px-3 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      />
+      <button
+        type="submit"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-md"
+        onclick="window.location.href='/thank-you.html'"
+      >
+        Subscribe
+      </button>
+    </form>
+  </div>
 </body>
 </html>
